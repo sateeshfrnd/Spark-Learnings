@@ -1,0 +1,3 @@
+Get application Logs
+=====================
+yarn logs -applicationId <application-id>
