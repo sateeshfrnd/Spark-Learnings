@@ -20,3 +20,14 @@ def getHiveTableTargetLocation(spark,hiveTableWithSchema):
         loc = df.filter(df.col_name == 'Location:').select(df.data_type.alias('targetLoc')).head()
         return str(loc.targetLoc)
     
+def checkduplicatesInDataFrame(spark, table_df, columnName) :
+    '''
+    Function returns duplicate count
+    spark: hiveContext or SparkSession (From Spark 2.0)
+    table_df: dataframe instance
+    columnName: column name to check duplicates
+    '''
+    table_df.registerTempTable("CheckDuplicates")
+    dup_df = spark.sql("SELECT {0} FROM CheckDuplicates GROUP BY {0} HAVING count(*) > 1".format('columnName'))
+    return dup_df.count()
+    
