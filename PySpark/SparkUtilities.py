@@ -28,6 +28,6 @@ def checkduplicatesInDataFrame(spark, table_df, columnName) :
     columnName: column name to check duplicates
     '''
     table_df.registerTempTable("CheckDuplicates")
-    dup_df = spark.sql("SELECT {0} FROM CheckDuplicates GROUP BY {0} HAVING count(*) > 1".format('columnName'))
+    dup_df = spark.sql("SELECT {0} FROM CheckDuplicates GROUP BY {0} HAVING count(*) > 1".format(columnName))
     return dup_df.count()
     
