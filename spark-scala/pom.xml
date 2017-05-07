@@ -4,8 +4,8 @@
 	<groupId>com.satish.workshop</groupId>
 	<artifactId>spark</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>${project.artifactId}</name>
-	<description>Maven project to start using Spark in Scala</description>
+	<name>spark-scala</name>
+	<description>Exploring Spark in Scala</description>
 
 	<dependencies>
 		<dependency>
