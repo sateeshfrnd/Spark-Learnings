@@ -159,7 +159,7 @@ def main(argv):
     ''' Save DataFrame in XML and Load
         Reference: https://github.com/databricks/spark-xml
     '''
-    data_df.coalesce(1).write.format("com.databricks.spark.xml").option(rowTag='employee', rootTag='employees').save(targetRootPath+'data_xml.xml')
+    data_df.coalesce(1).write.format("com.databricks.spark.xml").options(rowTag='employee', rootTag='employees').save(targetRootPath+'data_xml.xml')
     xml_df = sqlContext.read.format("com.databricks.spark.xml").option("rowTag", "employee").load(targetRootPath+'data_xml.xml')
         
     ''' stop spark context ''' 
