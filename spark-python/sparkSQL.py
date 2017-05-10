@@ -79,6 +79,16 @@ person_df1.collect()    #    [Row(Name=u'Teja', Age=3)]
 sqlContext.registerDataFrameAsTable(person_df, "person")
 person_df2 = sqlContext.sql("SELECT * FROM person")
 person_df2.collect()    #    [Row(Name=u'Teja', Age=3)]
+
+''' Get the list of registed tables ''' 
+getTables = sqlContext.tableNames()
+getTablesAsDataFrame = sqlContext.tables()
+
+"person" in sqlContext.tableNames() # True
 sqlContext.dropTempTable("person")
+"person" in sqlContext.tableNames() # False
+
+
+
 
 
