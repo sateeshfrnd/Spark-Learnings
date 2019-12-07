@@ -7,12 +7,45 @@
 	<name>spark-scala</name>
 	<description>Exploring Spark in Scala</description>
 
+	<properties>
+		<scala.version>2.12.8</scala.version>
+		<app.main.class>com.satish.workshop</app.main.class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spark.core.version>2.4.4</spark.core.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_2.10</artifactId>
-			<version>1.6.0</version>
+			<artifactId>spark-core_2.12</artifactId>
+			<version>${spark.core.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.12</artifactId>
+			<version>${spark.core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-hive_2.12</artifactId>
+			<version>${spark.core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.scalatest</groupId>
+			<artifactId>scalatest_2.12</artifactId>
+			<version>3.2.0-SNAP10</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 	
 	<pluginRepositories>
