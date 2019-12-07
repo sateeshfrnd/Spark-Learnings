@@ -9,7 +9,7 @@
 
 	<properties>
 		<scala.version>2.12.8</scala.version>
-		<app.main.class>com.satish.workshop</app.main.class>
+		<app.main.class>com.satish.workshop.spark</app.main.class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spark.core.version>2.4.4</spark.core.version>
 	</properties>
