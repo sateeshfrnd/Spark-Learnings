@@ -1,3 +1,0 @@
-Welcome to Spark Programming
-First Spark Program in Scala
-WordCount Program
