@@ -65,7 +65,8 @@ def generateAvroSchema(spark, argv):
 	df = spark.read.parquet(dataLocation)
 
 	print("Generating Avro Schema File...")
-	data_schema = [(f.name, f.tdataType) for f in df.schema.fields]
+	#data_schema = [(f.name, f.tdataType) for f in df.schema.fields]
+    data_schema = [(f.name, f.tdataType.simpleString()) for f in df.schema.fields]
 	print(data_schema)
 
 	avro_schema = dict()
@@ -76,8 +77,10 @@ def generateAvroSchema(spark, argv):
 	for kv in data_schema:
 		col_details = dict()
 		col_details["name"] = kv[0]
-		col_details["type"] = convertColType(kv[1])
+		#col_details["type"] = convertColType(kv[1])
+        col_details["type"] = kv[1]
 		fields.append(col_details)
+
 	avro_schema["fields"] = fields
 	print(avro_schema)
 	final_schema = json.dumps(avro_schema, indent=4, skipkeys=True)
