@@ -1,3 +1,4 @@
+#===================================================================================================================================================
 '''
 
 @author: Satish Kumar
@@ -12,6 +13,8 @@ PASSWORD    : Password to connect to source
 HIVE_DB     : Name of the database
 HIVe_TBL    : Name of the table.
 
+Referance   : https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html
+
 Usage:
 spark-submit --name LoadData \
 	 --master yarn \
@@ -20,7 +23,7 @@ spark-submit --name LoadData \
      --principle <KERB_PRINCIPLE> \
      JDBCLoader.py <CON_URL> <DRIVER> <TABLENAME> <USERNAME> <PASSWORD> <HIVE_DB> <HIVe_TBL> <MODE>
 '''
-
+#===================================================================================================================================================
 import sys
 from sys import argv
 from pyspark.sql import SparkSession
