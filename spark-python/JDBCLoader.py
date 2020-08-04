@@ -111,7 +111,7 @@ def main(argv):
     print("Initialising Spark Session")
     spark = SparkSession \
         .builder \
-        .appName("Generating Control File") \
+        .appName("JDBC Loader") \
         .enableHiveSupport() \
         .getOrCreate()
 
